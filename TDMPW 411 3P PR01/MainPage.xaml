@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TDMPW_411_3P_PR01.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout>
+            <Label
+                FontSize="40"
+                Text="{Binding gameStatus}"/>
+            <Label
+                FontSize="40"
+                HorizontalOptions="Center"
+                Text="{Binding levelStatus}"/>
+            <Label
+                FontSize="40"
+                HorizontalOptions="Center"
+                Text="{Binding currentQuestion}"/>
+            <Entry
+                x:Name="entryAnswer"
+                Completed="Entry_Completed"/>
+
+            <HorizontalStackLayout
+                x:Name="stackLives">
+                <Image
+                    HeightRequest="40"
+                    Source="heart.png"/>
+                <Image
+                    HeightRequest="40"
+                    Source="heart.png"/>
+                <Image
+                    HeightRequest="40"
+                    Source="heart.png"/>
+
+            </HorizontalStackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
