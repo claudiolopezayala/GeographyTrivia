@@ -49,6 +49,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Fonts\SoDoSans-Regular.ttf" />
 	  <None Remove="Resources\Images\heart.png" />
 	  <None Remove="Resources\Images\transparent.png" />
 	</ItemGroup>

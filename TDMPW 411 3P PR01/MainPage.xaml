@@ -4,35 +4,86 @@
              x:Class="TDMPW_411_3P_PR01.MainPage">
 
     <ScrollView>
-        <VerticalStackLayout>
+        <VerticalStackLayout
+            BackgroundColor="#f7f7f7">
+
+            <VerticalStackLayout
+                Spacing="10"
+                BackgroundColor="#ffffff">
+                <Label
+                    Grid.Column="0"
+                    Text="{Binding gameStatus}"
+                    VerticalOptions="Center"
+                    FontFamily="Sodo"
+                    FontSize="35"
+                    Margin="5,0,0,0"/>
+
+                
+            </VerticalStackLayout>
+
+            <Frame
+                HeightRequest="15"
+                BorderColor="Transparent"
+                CornerRadius="0">
+                <Frame.Background>
+                    <LinearGradientBrush
+                        EndPoint="0,1">
+                        <GradientStop 
+                            Offset="0.0"
+                            Color="#dddddd"/>
+                        <GradientStop 
+                            Offset="0.0"
+                            Color="Transparent"/>
+                    </LinearGradientBrush>
+                </Frame.Background>
+            </Frame>
+            <Grid
+                ColumnDefinitions="*,130"
+                Margin="5">
+                
+                <Label
+                    FontSize="25"
+                    Text="{Binding displayCorrectAnswers}"
+                    FontFamily="Sodo"/>
+
+                <HorizontalStackLayout
+                    x:Name="stackLives"
+                    Grid.Column="1"
+                    Spacing="5"
+                    VerticalOptions="Center"
+                    HorizontalOptions="End">
+                    <Image
+                        HeightRequest="40"
+                        Source="heart.png"/>
+                    <Image
+                        HeightRequest="40"
+                        Source="heart.png"/>
+                    <Image
+                        HeightRequest="40"
+                        Source="heart.png"/>
+
+                </HorizontalStackLayout>
+            </Grid>
+
+
+
+            
             <Label
                 FontSize="40"
-                Text="{Binding gameStatus}"/>
+                HorizontalOptions="Center"
+                Margin="5"
+                Text="{Binding currentQuestion}"/>
+            <Entry
+                x:Name="entryAnswer"
+                Completed="Entry_Completed"
+                Margin="5"/>
+
             <Label
                 FontSize="40"
                 HorizontalOptions="Center"
                 Text="{Binding levelStatus}"/>
-            <Label
-                FontSize="40"
-                HorizontalOptions="Center"
-                Text="{Binding currentQuestion}"/>
-            <Entry
-                x:Name="entryAnswer"
-                Completed="Entry_Completed"/>
 
-            <HorizontalStackLayout
-                x:Name="stackLives">
-                <Image
-                    HeightRequest="40"
-                    Source="heart.png"/>
-                <Image
-                    HeightRequest="40"
-                    Source="heart.png"/>
-                <Image
-                    HeightRequest="40"
-                    Source="heart.png"/>
 
-            </HorizontalStackLayout>
 
         </VerticalStackLayout>
     </ScrollView>

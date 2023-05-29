@@ -10,6 +10,7 @@ public partial class MainPage : ContentPage
     private int correctAnswers = 0;
     private int lives = 3;
     private string GameStatus = "First Game";
+    private string DisplayCorrectAnswers = "0 correct answers";
 
 	public string currentQuestion
 	{
@@ -38,6 +39,15 @@ public partial class MainPage : ContentPage
             OnPropertyChanged();
         }
     }
+    public string displayCorrectAnswers
+    {
+        get => DisplayCorrectAnswers;
+        set
+        {
+            DisplayCorrectAnswers = value;
+            OnPropertyChanged();
+        }
+    }
 
 	public MainPage()
     {
@@ -50,6 +60,7 @@ public partial class MainPage : ContentPage
     {
         lives = 3;
         correctAnswers = 0;
+        displayCorrectAnswers = $"{correctAnswers} correct answers";
         loadLevels();
         loadNewLevel();
     }
@@ -126,6 +137,7 @@ public partial class MainPage : ContentPage
         if (validateAnswer())
         {
             correctAnswers++;
+            displayCorrectAnswers = $"{correctAnswers} correct answers";
             if (correctAnswers >= 3)
             {
                 handleWonGame();
